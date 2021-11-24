@@ -11,7 +11,7 @@
         android:id="@+id/startButton"
         android:layout_width="191dp"
         android:layout_height="149dp"
-        android:text="@string/game_start"
+            android:text="@string/game_start"
         android:textSize="36sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
