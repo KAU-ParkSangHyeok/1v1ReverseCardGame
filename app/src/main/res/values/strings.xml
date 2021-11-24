@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">1v1ReverseCardGame</string>
+    <string name="game_start">Game Start!</string>
 </resources>
