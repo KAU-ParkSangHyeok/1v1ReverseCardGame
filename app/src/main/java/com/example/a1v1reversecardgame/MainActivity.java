@@ -16,12 +16,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button imageButton = (Button) findViewById(R.id.startButton);
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        Button startButton = (Button) findViewById(R.id.startButton);
+        Button easybutton = (Button) findViewById(R.id.easybutton);
+        Button hardbutton = (Button) findViewById(R.id.hardbutton);
+
+        startButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                startButton.setVisibility(View.INVISIBLE);
+                easybutton.setVisibility(View.VISIBLE);
+                hardbutton.setVisibility(View.VISIBLE);
+            }
+        });
+        easybutton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SubActivity.class);
+                startActivity(intent);
+            }
+        });
+        hardbutton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SubActivity2.class);
                 startActivity(intent);
             }
         });

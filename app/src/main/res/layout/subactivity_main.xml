@@ -8,11 +8,67 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/tryagain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다시하기"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
+
+    <Button
+        android:id="@+id/mainscreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메인화면"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55"  />
+
+    <ImageView
+        android:id="@+id/Again"
+        android:layout_width="254dp"
+        android:layout_height="138dp"
+        android:adjustViewBounds="false"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/again" />
+
+    <TextView
+        android:id="@+id/LastTime"
+        android:layout_width="197dp"
+        android:layout_height="51dp"
+        android:gravity="center"
+        android:text="00:60"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <Button
         android:id="@+id/button12"
         android:layout_width="48dp"
         android:layout_height="75dp"
         android:backgroundTint="#0000FF"
         android:textColor="#0000FF"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -27,6 +83,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#0000FF"
         android:textColor="#0000FF"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -41,6 +98,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#0000FF"
         android:textColor="#0000FF"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -55,6 +113,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#0000FF"
         android:textColor="#0000FF"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -69,6 +128,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#FF0000"
         android:textColor="#FF0000"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -84,6 +144,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#FF0000"
         android:textColor="#FF0000"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -98,6 +159,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#FF0000"
         android:textColor="#FF0000"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -112,6 +174,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#FF0000"
         android:textColor="#FF0000"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -126,6 +189,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#FF0000"
         android:textColor="#FF0000"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -140,6 +204,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#0000FF"
         android:textColor="#0000FF"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -154,6 +219,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#FF0000"
         android:textColor="#FF0000"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -168,6 +234,7 @@
         android:layout_height="75dp"
         android:backgroundTint="#0000FF"
         android:textColor="#0000FF"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -175,5 +242,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.585"
         tools:ignore="SpeakableTextPresentCheck" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,4 +19,32 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.785"/>
+
+    <Button
+        android:id="@+id/easybutton"
+        android:layout_width="135dp"
+        android:layout_height="101dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:text="Easy Mode"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <Button
+        android:id="@+id/hardbutton"
+        android:layout_width="135dp"
+        android:layout_height="101dp"
+        android:backgroundTint="#FFC107"
+        android:text="Hard Mode"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
 </androidx.constraintlayout.widget.ConstraintLayout>

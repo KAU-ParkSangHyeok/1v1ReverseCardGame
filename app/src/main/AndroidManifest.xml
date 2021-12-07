@@ -21,6 +21,9 @@
 
         <activity
             android:name=".SubActivity"/>
+
+        <activity
+            android:name=".SubActivity2"/>
     </application>
 
 </manifest>
