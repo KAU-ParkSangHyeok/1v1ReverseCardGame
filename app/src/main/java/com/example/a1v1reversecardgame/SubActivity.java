@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer;
 
@@ -35,6 +36,8 @@ public class SubActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.subactivity2_main);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         Button button1 = (Button) findViewById(R.id.button1);
         Button button2 = (Button) findViewById(R.id.button2);
@@ -372,16 +375,22 @@ public class SubActivity extends AppCompatActivity {
         if (red > blue) {
             LastTime.setText("승리!!  " + red + " : " + blue);
             win.start();
+            cardsound.stop();
+            cardsoundop.stop();
         }
 
         else if (red < blue){
             LastTime.setText("패배..  " + red + " : " + blue);
             lose.start();
+            cardsound.stop();
+            cardsoundop.stop();
         }
 
         else{
             LastTime.setText("무승부!  " + red + " : " + blue);
             draw.start();
+            cardsound.stop();
+            cardsoundop.stop();
         }
 
 

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer;
 
@@ -35,6 +36,8 @@ public class SubActivity2 extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.subactivity2_main);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
 
         Button button1 = (Button) findViewById(R.id.button1);
@@ -128,8 +131,8 @@ public class SubActivity2 extends AppCompatActivity {
             }
             @Override
             public void onFinish() { // value는 1이됨.
-                int interval = new Random().nextInt(2)+2;
-                interval*=100;
+                int interval = new Random().nextInt(3)+1;
+                interval*=70;
 
                 opponent2 = new CountDownTimer(1000, interval) {
                     @Override
@@ -370,16 +373,22 @@ public class SubActivity2 extends AppCompatActivity {
         if (red > blue) {
             LastTime.setText("승리!!  " + red + " : " + blue);
             win.start();
+            cardsound.stop();
+            cardsoundop.stop();
         }
 
         else if (red < blue){
             LastTime.setText("패배..  " + red + " : " + blue);
             lose.start();
+            cardsound.stop();
+            cardsoundop.stop();
         }
 
         else{
             LastTime.setText("무승부!  " + red + " : " + blue);
             draw.start();
+            cardsound.stop();
+            cardsoundop.stop();
         }
 
 
