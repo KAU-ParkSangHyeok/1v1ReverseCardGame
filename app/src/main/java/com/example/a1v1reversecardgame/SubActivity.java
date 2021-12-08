@@ -249,7 +249,7 @@ public class SubActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SubActivity2.class);
+                Intent intent = new Intent(getApplicationContext(), SubActivity.class);
                 startActivity(intent);
             }
         });

@@ -128,7 +128,7 @@ public class SubActivity2 extends AppCompatActivity {
             }
             @Override
             public void onFinish() { // value는 1이됨.
-                int interval = new Random().nextInt(1)+2;
+                int interval = new Random().nextInt(2)+2;
                 interval*=100;
 
                 opponent2 = new CountDownTimer(1000, interval) {
