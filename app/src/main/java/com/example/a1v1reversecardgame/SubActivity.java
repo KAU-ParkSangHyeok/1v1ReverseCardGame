@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import android.media.MediaPlayer;
 
 import java.util.Random;
 
@@ -22,11 +23,18 @@ public class SubActivity extends AppCompatActivity {
     CountDownTimer opponent1;
     CountDownTimer opponent2;
 
+    MediaPlayer sec3;
+    MediaPlayer gamebgm;
+    MediaPlayer cardsound;
+    MediaPlayer cardsoundop;
+    MediaPlayer win;
+    MediaPlayer lose;
+    MediaPlayer draw;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.subactivity_main);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setContentView(R.layout.subactivity2_main);
 
         Button button1 = (Button) findViewById(R.id.button1);
         Button button2 = (Button) findViewById(R.id.button2);
@@ -46,6 +54,13 @@ public class SubActivity extends AppCompatActivity {
         Button mainbutton = (Button) findViewById(R.id.mainscreen);
         ImageView again = findViewById(R.id.Again);
 
+        sec3 = MediaPlayer.create(this, R.raw.count3);
+        gamebgm = MediaPlayer.create(this, R.raw.gamebgm);
+        cardsound = MediaPlayer.create(this, R.raw.cardsound);
+        cardsoundop = MediaPlayer.create(this, R.raw.cardsoundop);
+        win = MediaPlayer.create(this, R.raw.win);
+        lose = MediaPlayer.create(this, R.raw.lose);
+        draw = MediaPlayer.create(this, R.raw.draw);
 
         CountDownTimer timer;
         CountDownTimer startimer;
@@ -70,10 +85,12 @@ public class SubActivity extends AppCompatActivity {
                 againbutton.setVisibility(View.VISIBLE);
                 mainbutton.setVisibility(View.VISIBLE);
                 again.setVisibility(View.VISIBLE);
+                gamebgm.stop();
                 finisher();
             }
         };
         startimer = new CountDownTimer(4000, 1000) {
+
             @Override
             public void onTick(long millisUntilFinished) {
                 LastTime.setText("" + millisUntilFinished / 1000);
@@ -99,6 +116,7 @@ public class SubActivity extends AppCompatActivity {
                         button12.setVisibility(View.VISIBLE);
 
                         timer.start();
+                        gamebgm.start();
                         opponent1.start();
                     }
                 }, 800);
@@ -112,7 +130,7 @@ public class SubActivity extends AppCompatActivity {
             }
             @Override
             public void onFinish() { // value는 1이됨.
-                int interval = new Random().nextInt(4)+3;
+                int interval = new Random().nextInt(4)+2;
                 interval*=100;
 
                 opponent2 = new CountDownTimer(1000, interval) {
@@ -130,6 +148,7 @@ public class SubActivity extends AppCompatActivity {
         };
 
         startimer.start();
+        sec3.start();
 
 
 
@@ -140,61 +159,73 @@ public class SubActivity extends AppCompatActivity {
                     if (button1.getCurrentTextColor() == Color.BLUE) {
                         button1.setTextColor(Color.RED);
                         button1.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button2) {
                     if (button2.getCurrentTextColor() == Color.BLUE) {
                         button2.setTextColor(Color.RED);
                         button2.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button3) {
                     if (button3.getCurrentTextColor() == Color.BLUE) {
                         button3.setTextColor(Color.RED);
                         button3.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button4) {
                     if (button4.getCurrentTextColor() == Color.BLUE) {
                         button4.setTextColor(Color.RED);
                         button4.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button5) {
                     if (button5.getCurrentTextColor() == Color.BLUE) {
                         button5.setTextColor(Color.RED);
                         button5.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button6) {
                     if (button6.getCurrentTextColor() == Color.BLUE) {
                         button6.setTextColor(Color.RED);
                         button6.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button7) {
                     if (button7.getCurrentTextColor() == Color.BLUE) {
                         button7.setTextColor(Color.RED);
                         button7.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button8) {
                     if (button8.getCurrentTextColor() == Color.BLUE) {
                         button8.setTextColor(Color.RED);
                         button8.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button9) {
                     if (button9.getCurrentTextColor() == Color.BLUE) {
                         button9.setTextColor(Color.RED);
                         button9.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button10) {
                     if (button10.getCurrentTextColor() == Color.BLUE) {
                         button10.setTextColor(Color.RED);
                         button10.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button11) {
                     if (button11.getCurrentTextColor() == Color.BLUE) {
                         button11.setTextColor(Color.RED);
                         button11.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 } else if (v == button12) {
                     if (button12.getCurrentTextColor() == Color.BLUE) {
                         button12.setTextColor(Color.RED);
                         button12.setBackgroundColor(Color.RED);
+                        cardsound.start();
                     }
                 }
             }
@@ -218,7 +249,7 @@ public class SubActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SubActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SubActivity2.class);
                 startActivity(intent);
             }
         });
@@ -327,12 +358,21 @@ public class SubActivity extends AppCompatActivity {
         else
             blue++;
 
-        if (red > blue)
+        if (red > blue) {
             LastTime.setText("승리!!  " + red + " : " + blue);
-        else if (red < blue)
+            win.start();
+        }
+
+        else if (red < blue){
             LastTime.setText("패배..  " + red + " : " + blue);
-        else
+            lose.start();
+        }
+
+        else{
             LastTime.setText("무승부!  " + red + " : " + blue);
+            draw.start();
+        }
+
 
     }
 
@@ -358,72 +398,84 @@ public class SubActivity extends AppCompatActivity {
                 if(button1.getCurrentTextColor() == Color.RED){
                     button1.setTextColor(Color.BLUE);
                     button1.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 2:
                 if(button2.getCurrentTextColor() == Color.RED){
                     button2.setTextColor(Color.BLUE);
                     button2.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 3:
                 if(button3.getCurrentTextColor() == Color.RED){
                     button3.setTextColor(Color.BLUE);
                     button3.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 4:
                 if(button4.getCurrentTextColor() == Color.RED){
                     button4.setTextColor(Color.BLUE);
                     button4.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 5:
                 if(button5.getCurrentTextColor() == Color.RED){
                     button5.setTextColor(Color.BLUE);
                     button5.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 6:
                 if(button6.getCurrentTextColor() == Color.RED){
                     button6.setTextColor(Color.BLUE);
                     button6.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 7:
                 if(button7.getCurrentTextColor() == Color.RED){
                     button7.setTextColor(Color.BLUE);
                     button7.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 8:
                 if(button8.getCurrentTextColor() == Color.RED){
                     button8.setTextColor(Color.BLUE);
                     button8.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 9:
                 if(button9.getCurrentTextColor() == Color.RED){
                     button9.setTextColor(Color.BLUE);
                     button9.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 10:
                 if(button10.getCurrentTextColor() == Color.RED){
                     button10.setTextColor(Color.BLUE);
                     button10.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 11:
                 if(button11.getCurrentTextColor() == Color.RED){
                     button11.setTextColor(Color.BLUE);
                     button11.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
             case 12:
                 if(button12.getCurrentTextColor() == Color.RED){
                     button12.setTextColor(Color.BLUE);
                     button12.setBackgroundColor(Color.BLUE);
+                    cardsoundop.start();
                     break;
                 }
         }
