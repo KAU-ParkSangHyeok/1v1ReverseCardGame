@@ -266,13 +266,15 @@ public class SubActivity2 extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         gamebgm.stop();
         cardsoundop.stop();
         cardsound.stop();
         sec3.stop();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(SubActivity2.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        finish();
         startActivity(intent);
-        super.onBackPressed();
     }
 
     void cardhide() {

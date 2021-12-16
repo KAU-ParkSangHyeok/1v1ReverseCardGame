@@ -268,13 +268,16 @@ public class SubActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         gamebgm.stop();
         cardsoundop.stop();
         cardsound.stop();
         sec3.stop();
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(SubActivity.this, MainActivity.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);    //인텐트 플래그 설정
+        finish();
         startActivity(intent);
-        super.onBackPressed();
+
     }
 
     void cardhide() {
